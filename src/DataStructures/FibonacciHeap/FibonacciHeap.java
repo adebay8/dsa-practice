@@ -1,6 +1,4 @@
-package FibonacciHeap;
-
-import FibonacciHeap.Node;
+package DataStructures.FibonacciHeap;
 
 public class FibonacciHeap {
     Node min;

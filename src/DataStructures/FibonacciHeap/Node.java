@@ -1,4 +1,4 @@
-package FibonacciHeap;
+package DataStructures.FibonacciHeap;
 
 public class Node {
     Node parent;

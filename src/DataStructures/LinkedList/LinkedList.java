@@ -1,6 +1,4 @@
-package LinkedList;
-
-import LinkedList.Node;
+package DataStructures.LinkedList;
 
 public class LinkedList {
     Node head;

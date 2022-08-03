@@ -1,4 +1,4 @@
-package examples;
+package Questions;
 
 import java.util.stream.IntStream;
 

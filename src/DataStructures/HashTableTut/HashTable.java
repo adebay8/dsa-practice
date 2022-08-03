@@ -1,4 +1,4 @@
-package HashTableTut;
+package DataStructures.HashTableTut;
 
 import java.util.*;
 

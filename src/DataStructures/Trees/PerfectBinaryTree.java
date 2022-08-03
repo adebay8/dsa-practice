@@ -1,4 +1,4 @@
-package Trees;
+package DataStructures.Trees;
 
 public class PerfectBinaryTree {
     static class Node{
