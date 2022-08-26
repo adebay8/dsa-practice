@@ -41,15 +41,31 @@ public class VectorWithArray<T> {
         return vector[index];
     }
 
-    public void insert(int index, T item){
-        if (this.size == this.capacity) {
-            T[] tempVector = (T[]) Array.newInstance(this.vectorClass, 2 * this.capacity);
-            System.arraycopy(vector, 0, tempVector, 0, vector.length);
-
-            this.capacity *= 2;
-            this.vector = tempVector;
-        }
-        this.vector[index] = item;
-        this.size += 1;
+    public void push(T item) {
+        if (this.size == this.capacity) this.increaseVectorCapacity();
+        this.vector[size] = item;
+        size +=1;
+        System.out.println(Arrays.toString(vector));
     }
+
+    public void insert(int index, T item){
+        try {
+            if (this.size == this.capacity) this.increaseVectorCapacity();
+            this.vector[index] = item;
+            this.size += 1;
+        } catch (IndexOutOfBoundsException exception) {
+            this.increaseVectorCapacity();
+            insert(index, item);
+        }
+    }
+
+    private void increaseVectorCapacity(){
+        T[] tempVector = (T[]) Array.newInstance(this.vectorClass, 2 * this.capacity);
+        System.arraycopy(vector, 0, tempVector, 0, this.vector.length);
+
+        this.capacity *= 2;
+        this.vector = tempVector;
+    }
+
+    public void prepend(){}
 }
